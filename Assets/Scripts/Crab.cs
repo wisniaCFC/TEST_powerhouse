@@ -76,7 +76,7 @@ public class Crab : MonoBehaviour
         }
     }
 
-    public void UnblockCrabs() //triggerred by animation event
+    public void UnblockCrabs() //triggered by animation event
     {
         _crabManager.CrabIsBusy = false;
     }
@@ -87,7 +87,7 @@ public class Crab : MonoBehaviour
         _valueText.text = value + "$";
     }
 
-    public void ShowValue() //trigerred by animation event
+    public void ShowValue() //triggered by animation event
     {
         _valueText.color = Color.black;
         _crabManager.AddScore(_value);

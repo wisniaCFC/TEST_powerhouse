@@ -21,12 +21,19 @@ public class MainSceneManager : MonoBehaviour
         _buttons.Initialize(_sequences);
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
+
     public void OnButtonClick(Button b)
     {
         int index = _buttons.GetButtonIndex(b);
 
         SequencesManager.Sequence = _sequences[index];
-        //CrabsManager.SetSequenceAndResetScore(_sequences[index]);
         _girl.PressButton();
         StartCoroutine(WaitForAnimationEndAndStartGame());
     }

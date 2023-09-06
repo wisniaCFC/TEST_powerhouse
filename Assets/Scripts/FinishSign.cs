@@ -36,7 +36,7 @@ public class FinishSign : MonoBehaviour
         _animator.SetTrigger(ANIM_FINISH);
     }
 
-    public void EnableEndRoundLabel() //triggerred by animation event
+    public void EnableEndRoundLabel() //triggered by animation event
     {
         _endLabel.enabled = true;
         _isFullyVisible = true;

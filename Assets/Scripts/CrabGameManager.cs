@@ -80,7 +80,7 @@ public class CrabGameManager : MonoBehaviour
         _currentTimer = TIME_TO_AUTO_PICK;
         StopCoroutine(_timerCoroutine);
 
-        if (_isFinished)
+        if (!_isFinished)
             _timerCoroutine = StartCoroutine(StartCountdown());
     }
 
@@ -105,6 +105,7 @@ public class CrabGameManager : MonoBehaviour
 
         if (value == 0 || _openedCrabsCount == _sequence.RewardsSequence.Length)
         {
+            StopCoroutine(_timerCoroutine);
             _isFinished = true;
             _finishSign.Show();
         }
